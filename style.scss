@@ -103,8 +103,31 @@ nav {
 
     .menuButton {
         @include buttonReset();
-        font-size: 15px;
+        font-size: 14px;
+        
+        padding-top: 8px;
+        padding-bottom: 6px;
+        padding-left: 10px;
+        padding-right: 2px;
+        transition: 0.4s;
+
+
+        &:hover {
+            background-color: $yellow;
+            color: #555;
+            fill: #555;
+        }
+
+        span {
+            display: flex;
+        }
+
+        svg {
+            margin-left: 5px;
+        }
     }
+
+
 
     img {
         height: 32px;
