@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -7,8 +9,95 @@
 
 html {
   font-family: 'Roboto', sans-serif;
-  background-color: #000;
-  font-size: 16px;
+  background-color: black;
+  font-size: 18px;
+}
+
+body {
+  height: 3000px;
+}
+
+.gridWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 20px 0 60px;
+}
+
+.mainWrapper {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding: 50px 0 60px;
+  -ms-grid-column-span: 12;
+      grid-column-end: span 12;
+}
+
+.headingWrapper {
+  color: white;
+  position: relative;
+}
+
+.headingWrapper:after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #ffcc00;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  margin-top: 21px;
+}
+
+.headingWrapper h1 {
+  font-size: 3.2em;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.headingWrapper p {
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin: 20px 0 34px;
+}
+
+.headingWrapper p a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px #ffcc00 solid;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.headingWrapper p a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background-color: #ffcc00;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.headingWrapper p a:hover:after {
+  height: 105%;
+}
+
+.headingWrapper p a:hover {
+  color: black;
 }
 
 nav {
@@ -37,15 +126,16 @@ nav .loginButton {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 14px;
-  letter-spacing: 0.2em;
-  padding: 8px 10px;
+  letter-spacing: 0.1em;
+  padding: 8px 10px 4px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 nav .loginButton:hover {
-  background-color: #ffd633;
+  background-color: #ffcc00;
   cursor: pointer;
 }
 
@@ -61,11 +151,13 @@ nav .subscribeButton {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 nav .subscribeButton a {
   text-decoration: none;
-  color: #000;
+  color: black;
   color: white;
   z-index: 3;
   width: calc(100% + 40px);
@@ -73,12 +165,12 @@ nav .subscribeButton a {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  -webkit-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 nav .subscribeButton a:hover {
-  color: #000;
+  color: black;
 }
 
 nav .menuButton {
@@ -88,29 +180,39 @@ nav .menuButton {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 14px;
+  letter-spacing: 2px;
   padding-top: 8px;
   padding-bottom: 6px;
   padding-left: 10px;
   padding-right: 2px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 nav .menuButton:hover {
-  background-color: #ffd633;
+  background-color: #ffcc00;
   color: #555;
   fill: #555;
 }
 
 nav .menuButton span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin-top: 0;
 }
 
 nav .menuButton svg {
   margin-left: 5px;
+  margin-bottom: 2px;
 }
 
 nav img {
@@ -143,7 +245,7 @@ nav li:last-of-type {
 }
 
 nav li:nth-child(4) {
-  background-color: #000;
+  background-color: black;
   padding: 17px 20px;
   margin-bottom: 2px;
   position: relative;
@@ -153,14 +255,14 @@ nav li:nth-child(4) {
 nav li:nth-child(4):after {
   content: '';
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 100%;
   bottom: 0;
   left: 0;
   z-index: 1;
-  background-color: #ffd633;
-  -webkit-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
+  background-color: #ffcc00;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 nav li:nth-child(4):hover:after {
@@ -169,9 +271,9 @@ nav li:nth-child(4):hover:after {
 
 nav .renewAnchor {
   text-decoration: none;
-  color: #000;
-  color: #000;
-  border-bottom: 2px #ffd633 solid;
+  color: black;
+  color: black;
+  border-bottom: 2px #ffcc00 solid;
   font-size: 14px;
   position: relative;
   z-index: 3;
@@ -180,7 +282,7 @@ nav .renewAnchor {
 nav .renewAnchor:after {
   content: '';
   position: absolute;
-  background-color: #ffd633;
+  background-color: #ffcc00;
   height: 0;
   width: 100%;
   bottom: 0;

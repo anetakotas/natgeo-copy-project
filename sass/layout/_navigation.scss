@@ -1,3 +1,6 @@
+
+
+
 nav {
     height: 49px;
     background-color: $white;
@@ -17,9 +20,10 @@ nav {
     .loginButton {
         @include buttonReset();
 
+        font-family: $josefinFont;
         font-size: 14px;
-        letter-spacing: 0.2em;
-        padding: 8px 10px;
+        letter-spacing: 0.1em;
+        padding: 8px 10px 4px;
         transition: 0.4s;
         
 
@@ -38,18 +42,18 @@ nav {
         font-size: 13px;
         display: grid;
         place-items: center;
+        height: 100%;
+        width: 100%;
         
         a {
             @include linksReset();
             color: $white;
             z-index: 3;
-            
-            
             width: calc(100% + 40px);
             height: calc(100% + 34px);
             display: grid;
             place-items: center;
-            transition: 0.2s ease-in;
+            transition: 0.2s ease;
 
             &:hover {
                 color: $black;
@@ -63,13 +67,18 @@ nav {
 
     .menuButton {
         @include buttonReset();
+
+        font-family: $josefinFont;
         font-size: 14px;
-        
+        letter-spacing: 2px;
         padding-top: 8px;
         padding-bottom: 6px;
         padding-left: 10px;
         padding-right: 2px;
         transition: 0.4s;
+        display: inline-flex;
+        align-items: flex-end;
+
 
 
         &:hover {
@@ -79,11 +88,14 @@ nav {
         }
 
         span {
-            display: flex;
+            display: grid;
+            place-items: center;
+            margin-top: 0;
         }
 
         svg {
             margin-left: 5px;
+            margin-bottom: 2px;
         }
     }
 
@@ -124,13 +136,13 @@ nav {
             &:after {
                 content: '';
                 position: absolute;
-                width: 0%;
+                width: 0;
                 height: 100%;
                 bottom: 0;
                 left: 0;
                 z-index: 1;
                 background-color: $yellow;
-                transition: 0.2s ease-in;
+                transition: 0.2s ease;
                 
             }
 
