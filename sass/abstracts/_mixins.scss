@@ -1,0 +1,13 @@
+@mixin buttonReset {
+    border: none;
+    font-family: inherit;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: $boldWeigth;
+}
+
+@mixin linksReset {
+    text-decoration: none;
+    color: $black;
+}
